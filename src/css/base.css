@@ -23,6 +23,10 @@ body {
   min-height: 100vh;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
+  background: url('../img/webp/background/Background.Mobile.webp') no-repeat
+    center top;
+  background-size: cover; /* або contain, залежно від бажаного ефекту */
+  font-family: sans-serif;
 }
 
 main {
@@ -36,4 +40,13 @@ h1,
 h2,
 h3 {
   font-family: 'Coiny', cursive;
+}
+
+@media only screen and (min-width: 1200px) {
+  body {
+    background: url('../img/webp/background/Background.Desktop.webp') no-repeat
+      center top;
+    background-size: cover; /* або contain, залежно від бажаного ефекту */
+    font-family: sans-serif;
+  }
 }
