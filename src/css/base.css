@@ -22,6 +22,7 @@ body {
   min-width: 100vw;
   min-height: 100vh;
   margin: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
 main {
@@ -29,4 +30,10 @@ main {
 }
 main:has(.back-link) {
   text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Coiny', cursive;
 }
