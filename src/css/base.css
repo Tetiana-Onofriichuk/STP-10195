@@ -37,6 +37,7 @@ body {
     no-repeat center top;
   background-size: cover;
   font-family: sans-serif;
+  padding-top: 84px;
 }
 
 main {
