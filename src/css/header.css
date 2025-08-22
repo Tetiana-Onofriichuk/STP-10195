@@ -2,12 +2,12 @@
 .header {
   position: fixed;
   top: 8px;
-  left: 0;
-  right: 0;
   z-index: 1000;
   background: transparent;
   padding: 0 8px;
   box-sizing: border-box;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .header-container {
@@ -17,9 +17,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 0px;
+  padding: 10px 10px;
   flex-wrap: nowrap;
-  max-width: 280px;
+  min-width: 300px;
 }
 
 .logo {
@@ -70,10 +70,31 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 12px 20px;
+    min-width: 1032px;
   }
 
   .nav {
-    display: block;
+    display: flex;
+  }
+  .list-item {
+    display: flex;
+    gap: 36px;
+  }
+  .link-nav {
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .link-nav:hover {
+    color: #6f6f70;
+  }
+  .link-nav:focus {
+    color: #6f6f70;
+  }
+  .logo-img {
+    margin-left: 16px;
+    margin-right: 32px;
   }
 
   .burger {
@@ -81,8 +102,7 @@
   }
 
   .game-title {
-    display: block;
-    font-size: 1.2rem;
+    display: none;
   }
 }
 
