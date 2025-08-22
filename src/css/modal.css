@@ -1,87 +1,107 @@
-.modal-overlay {
+.header {
   position: fixed;
-  inset: 0;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1100; /* вище ніж overlay */
+}
+
+/* Бекдроп */
+.mm-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0; /* перекриває все, не від header-bottom */
+  bottom: 0;
   background: rgba(0, 0, 0, 0.45);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.28s ease, visibility 0.28s ease;
-  z-index: 10000;
+  z-index: 1000; /* нижче хедера */
 }
-.modal-overlay.js-is-open {
+
+.mm-overlay.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
 
-.modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: min(92vw, 360px);
-  height: 100%;
-  background: #fff7c9;
-  border-radius: 14px 0 0 14px;
-  box-shadow: -6px 0 24px rgba(0, 0, 0, 0.25);
-  transform: translateX(100%);
-  transition: transform 0.28s ease;
+/* Панель */
+.mm-panel {
+  position: absolute;
+  left: 50%;
+  top: var(--header-bottom);
+  transform: translate(-50%, -12px);
+  width: min(92vw, var(--pill-width));
+  background: var(--pill-bg);
+  border-radius: var(--pill-radius);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, opacity 0.3s ease;
   display: flex;
   flex-direction: column;
-  overflow: auto;
-}
-.modal-overlay.js-is-open .modal {
-  transform: translateX(0);
+  overflow: hidden;
+  opacity: 0;
+  z-index: 1050; /* вище за бекдроп, але нижче за хедер */
 }
 
-.close-btn {
-  position: absolute;
-  top: 14px;
-  right: 14px;
+.mm-overlay.is-open .mm-panel {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+/* Кнопка закриття (якщо використовуєш) */
+.mm-close {
+  align-self: flex-end;
   background: transparent;
   border: 0;
-  font-size: 22px;
+  padding: 10px 12px;
   cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
 }
 
-.modal .list-item {
+/* Список пунктів */
+.mm-list {
   list-style: none;
-  margin: 60px 0 0;
-  padding: 0 12px 20px;
+  margin: 0;
+  padding: 8px 16px 16px 16px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0;
 }
-.modal .link-nav {
+.mm-link {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 14px;
+  padding: 16px 8px;
   font-size: 18px;
   color: #0e1823;
   text-decoration: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #d4c77f; /* більш чітка риска */
 }
-.modal .link-nav:last-child {
-  border-bottom: none;
+.mm-link-feaut {
+  fill: black;
 }
-.icon-mob {
+.mm-link:last-child {
+  border-bottom: none; /* останній пункт без риски */
+}
+.mm-ico {
   width: 24px;
   height: 24px;
   stroke: currentColor;
   fill: none;
 }
 
-body.modal-open {
+/* Лок скролу при відкритті (опційно, якщо додаєш клас на body з JS) */
+body.mm-lock {
   position: fixed;
   overflow: hidden;
   width: 100%;
 }
 
+/* На десктопі мобільне меню ховаємо (використовуєш desktop-nav) */
 @media (min-width: 1200px) {
-  .burger {
-    display: none;
-  }
-  .modal-overlay {
+  .mm-overlay {
     display: none;
   }
 }

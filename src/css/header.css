@@ -1,25 +1,30 @@
-/* ===== Хедер ===== */
+:root {
+  /* Низ хедера на мобілці (має збігатися з відступом сторінки під хедер) */
+  --header-bottom: 68px; /* якщо поміняєш висоту/відступи хедера — онови це значення */
+  --menu-gap: 8px; /* відстань між хедером і випадаючим меню */
+  --pill-width: 360px; /* цільова ширина “пілюлі” на мобілці */
+  --pill-radius: 12px;
+  --pill-bg: #fff7c9;
+}
+
 .header {
   position: fixed;
   top: 8px;
-  z-index: 1000;
-  background: transparent;
-  padding: 0 8px;
-  box-sizing: border-box;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 20000;
 }
 
 .header-container {
-  background: #fff5c9;
-  border-radius: 12px;
+  background: var(--pill-bg);
+  border-radius: var(--pill-radius);
   box-shadow: 2px 2px 8px rgba(4, 9, 15, 0.24);
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 10px 10px;
-  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 10px 14px;
   min-width: 300px;
+  width: min(92vw, var(--pill-width));
 }
 
 .logo {
@@ -34,14 +39,12 @@
 }
 
 .game-title {
-  margin: 0;
+  margin: 0 14px;
   font-weight: 400;
   font-size: 12px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-left: 14px;
-  margin-right: 14px;
 }
 
 .nav {
@@ -60,19 +63,19 @@
   width: 24px;
   height: 24px;
 }
+
 @media (min-width: 1200px) {
   .header {
     top: 20px;
     padding: 0 24px;
   }
-
   .header-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 12px 20px;
     min-width: 1032px;
+    width: auto;
   }
-
   .nav {
     display: flex;
   }
@@ -86,26 +89,17 @@
     text-align: center;
     cursor: pointer;
   }
-  .link-nav:hover {
-    color: #6f6f70;
-  }
+  .link-nav:hover,
   .link-nav:focus {
     color: #6f6f70;
   }
   .logo-img {
-    margin-left: 16px;
-    margin-right: 32px;
+    margin: 0 32px 0 16px;
   }
-
   .burger {
     display: none;
   }
-
   .game-title {
     display: none;
   }
-}
-
-body {
-  padding-top: 68px;
 }
