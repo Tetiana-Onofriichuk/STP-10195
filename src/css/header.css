@@ -1,0 +1,91 @@
+/* ===== Хедер ===== */
+.header {
+  position: fixed;
+  top: 8px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+.header-container {
+  background: #fff5c9;
+  border-radius: 12px;
+  box-shadow: 2px 2px 8px rgba(4, 9, 15, 0.24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0px;
+  flex-wrap: nowrap;
+  max-width: 280px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+}
+
+.game-title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 14px;
+  margin-right: 14px;
+}
+
+.nav {
+  display: none;
+}
+
+.burger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  padding: 0;
+}
+.burger-icon {
+  stroke: black;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 1200px) {
+  .header {
+    top: 20px;
+    padding: 0 24px;
+  }
+
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 20px;
+  }
+
+  .nav {
+    display: block;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .game-title {
+    display: block;
+    font-size: 1.2rem;
+  }
+}
+
+body {
+  padding-top: 68px;
+}

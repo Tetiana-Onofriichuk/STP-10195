@@ -1,0 +1,54 @@
+<header class="header">
+  <div class="header-container">
+    <div class="logo">
+      <picture>
+        <!-- Десктопна версія -->
+        <source
+          srcset="
+            ../img/header/logo-desktop.png    1x,
+            ../img/header/logo-desktop@2x.png 2x
+          "
+          media="(min-width: 1200px)"
+          type="image/png"
+        />
+
+        <!-- Мобільна версія -->
+        <source
+          srcset="
+            ../img/header/logo-mobile.png    1x,
+            ../img/header/logo-mobile@2x.png 2x
+          "
+          media="(max-width: 1199px)"
+          type="image/png"
+        />
+
+        <!-- Fallback (якщо <picture> не підтримується) -->
+        <img
+          src="../img/header/logo-mobile.png"
+          alt="Mary's Life Logo"
+          class="logo-img"
+        />
+      </picture>
+
+      <h1 class="game-title">Mary’s Life: A Makeover Story</h1>
+    </div>
+
+    <nav class="nav">
+      <ul>
+        <li><a href="#GameDescription">Game Description</a></li>
+        <li><a href="#KeyFeatures">Key Features</a></li>
+        <li><a href="#Characters">Characters</a></li>
+        <li><a href="#Gallery">Gallery</a></li>
+        <li><a href="#FAQ">FAQ</a></li>
+        <li><a href="#Download">Download</a></li>
+        <li><a href="#Contacts">Contacts</a></li>
+      </ul>
+    </nav>
+
+    <button class="burger" aria-label="Menu">
+      <svg class="burger-icon" width="24" height="24">
+        <use href="../img/sprite.svg#icon-burger"></use>
+      </svg>
+    </button>
+  </div>
+</header>
