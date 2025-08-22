@@ -23,9 +23,12 @@ body {
   min-height: 100vh;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
-  background: url('../img/webp/background/Background.Mobile.webp') no-repeat
-    center top;
-  background-size: cover; /* або contain, залежно від бажаного ефекту */
+  background: image-set(
+      url('../img/backgraund/background-mobile.webp') 1x,
+      url('../img/backgraund/backgroundmobile@2x.webp') 2x
+    )
+    no-repeat center top;
+  background-size: cover;
   font-family: sans-serif;
 }
 
@@ -44,9 +47,12 @@ h3 {
 
 @media only screen and (min-width: 1200px) {
   body {
-    background: url('../img/webp/background/Background.Desktop.webp') no-repeat
-      center top;
-    background-size: cover; /* або contain, залежно від бажаного ефекту */
+    background: image-set(
+        url('../img/backgraund/backgroud-desktop.webp') 1x,
+        url('../img/backgraund/background-desktop@2x.webp') 2x
+      )
+      no-repeat center top;
+    background-size: cover;
     font-family: sans-serif;
   }
 }
