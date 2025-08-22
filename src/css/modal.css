@@ -1,0 +1,40 @@
+.modal-overlay {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0e1823;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  padding: 16px 20px 40px;
+  margin: 0 auto;
+}
+.modal-overlay.js-is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.modal {
+}
+.list-item {
+  display: flex;
+  flex-direction: column;
+}
+.link-nav {
+}
+.close-btn {
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
