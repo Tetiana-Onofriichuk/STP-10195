@@ -9,7 +9,6 @@
   line-height: 1.5;
   font-weight: 400; /* базово Regular */
   color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -65,8 +64,8 @@ b {
 @media only screen and (min-width: 1200px) {
   body {
     background: image-set(
-        url('./img/backgraund/background-desktop.webp') 1x,
-        url('./img/backgraund/background-desktop@2x.webp') 2x
+        url('../img/backgraund/background-desktop.webp') 1x,
+        url('../img/backgraund/background-desktop@2x.webp') 2x
       )
       no-repeat center top;
     background-size: cover;
