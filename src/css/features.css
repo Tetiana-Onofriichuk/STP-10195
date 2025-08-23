@@ -169,4 +169,21 @@
     position: absolute;
     bottom: 0;
   }
+  .features-one {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 220px;
+  }
+  .features-two {
+    display: block;
+    position: absolute;
+    right: 20px;
+    bottom: 100px;
+  }
+  .features-three {
+    display: block;
+    position: absolute;
+    bottom: -20px;
+  }
 }
