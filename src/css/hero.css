@@ -1,0 +1,149 @@
+.container {
+}
+.hero-container {
+  margin-top: 0px;
+  display: flex;
+  padding: 16px 32px 156px 32px;
+  gap: 16px;
+  justify-content: center;
+  position: relative;
+}
+.hero-title-text {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  max-width: 136px;
+  position: absolute;
+  left: 32px;
+  top: 30px;
+}
+.hero-title {
+  display: none;
+}
+.hero-text {
+}
+.hero-picture {
+  position: absolute;
+  right: 24px;
+  top: -10px;
+}
+
+.hero-img {
+  border-radius: 8px;
+}
+.hero-link {
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+  font-family: coiny;
+}
+.btn-link {
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.25);
+  background-color: #deffc9;
+  min-width: 280px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  position: absolute;
+  top: 172px;
+  left: 15px;
+  z-index: 10;
+}
+.hero-cat {
+  position: absolute;
+  top: 96px;
+  left: 10px;
+  width: 56px;
+  height: 84px;
+  background-image: url('../img/cat_hero.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+.hero-pazl-one {
+  display: none;
+}
+.hero-pazl-two {
+  display: none;
+}
+.hero-pazl-three {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .hero-container {
+    padding: 72px 116px 72px 192px;
+  }
+  .hero-cat {
+    display: none;
+  }
+
+  .hero-title {
+    display: block;
+    min-width: 636px;
+    font-weight: 400;
+    font-size: 40px;
+  }
+  .hero-text {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 28px;
+    color: #515151;
+  }
+  .hero-title-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 636px;
+    position: absolute;
+    left: 114px;
+  }
+  .hero-picture {
+    right: 116px;
+    top: 0;
+    z-index: 10;
+  }
+  .btn-link {
+    min-width: 400px;
+    min-height: 68px;
+    position: absolute;
+    left: 234px;
+    top: 264px;
+  }
+  .hero-pazl-one {
+    display: block;
+    position: absolute;
+    top: 400px;
+    left: 725px;
+    width: 90px;
+    height: 70px;
+
+    margin: 0;
+    padding: 0;
+  }
+  .hero-pazl-two {
+    display: block;
+    position: absolute;
+    top: 215px;
+    left: 154px;
+    width: 99px;
+    height: 87px;
+    margin: 0;
+    padding: 0;
+  }
+  .hero-pazl-three {
+    display: block;
+    position: absolute;
+    top: 228px;
+    left: 612px;
+    width: 81px;
+    height: 59px;
+    margin: 0;
+    padding: 0;
+  }
+}
