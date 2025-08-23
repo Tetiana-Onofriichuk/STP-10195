@@ -1,8 +1,7 @@
 :root {
-  /* Низ хедера на мобілці (має збігатися з відступом сторінки під хедер) */
-  --header-bottom: 68px; /* якщо поміняєш висоту/відступи хедера — онови це значення */
-  --menu-gap: 8px; /* відстань між хедером і випадаючим меню */
-  --pill-width: 360px; /* цільова ширина “пілюлі” на мобілці */
+  --header-bottom: 68px;
+  --menu-gap: 8px;
+  --pill-width: 360px;
   --pill-radius: 12px;
   --pill-bg: #fff7c9;
 }
@@ -63,7 +62,18 @@
   width: 24px;
   height: 24px;
 }
-
+.burger-icon .icon-burger {
+  display: inline;
+}
+.burger-icon .icon-close {
+  display: none;
+}
+.burger.is-open .icon-burger {
+  display: none;
+}
+.burger.is-open .icon-close {
+  display: inline;
+}
 @media (min-width: 1200px) {
   .header {
     top: 20px;
