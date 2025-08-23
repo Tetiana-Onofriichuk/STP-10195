@@ -3,22 +3,26 @@
   top: 8px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1100; /* вище ніж overlay */
+  z-index: 1100;
+}
+.modal-container {
+  padding: 0;
+  margin: 0;
+  background: transparent;
 }
 
-/* Бекдроп */
 .mm-overlay {
   position: fixed;
   left: 0;
   right: 0;
-  top: 0; /* перекриває все, не від header-bottom */
+  top: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.45);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.28s ease, visibility 0.28s ease;
-  z-index: 1000; /* нижче хедера */
+  z-index: 1000;
 }
 
 .mm-overlay.is-open {
@@ -27,7 +31,6 @@
   pointer-events: auto;
 }
 
-/* Панель */
 .mm-panel {
   position: absolute;
   left: 50%;
@@ -42,14 +45,16 @@
   flex-direction: column;
   overflow: hidden;
   opacity: 0;
-  z-index: 1050; /* вище за бекдроп, але нижче за хедер */
+  z-index: 1050;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .mm-overlay.is-open .mm-panel {
   transform: translate(-50%, 0);
   opacity: 1;
 }
-/* Кнопка закриття (якщо використовуєш) */
+
 .mm-close {
   align-self: flex-end;
   background: transparent;
@@ -60,14 +65,24 @@
   line-height: 1;
 }
 
-/* Список пунктів */
 .mm-list {
-  list-style: none;
-  margin: 0;
-  padding: 8px 16px 16px 16px;
+  padding: 12px 0;
   display: flex;
+  align-items: center;
+  justify-content: flex-end;
   flex-direction: column;
-  gap: 0;
+  box-shadow: 2px 2px 8px 0 rgba(4, 9, 15, 0.24);
+  background-color: var(--main-yellow);
+  border-radius: 12px;
+  margin-top: 0;
+  padding-top: 0;
+}
+.mm-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  position: relative;
 }
 .mm-link {
   display: flex;
@@ -77,13 +92,13 @@
   font-size: 18px;
   color: #0e1823;
   text-decoration: none;
-  border-bottom: 1px solid #d4c77f; /* більш чітка риска */
+  border-bottom: 1px solid #d4c77f;
 }
 .mm-link-feaut {
   fill: black;
 }
 .mm-link:last-child {
-  border-bottom: none; /* останній пункт без риски */
+  border-bottom: none;
 }
 .mm-ico {
   width: 24px;
@@ -92,14 +107,12 @@
   fill: none;
 }
 
-/* Лок скролу при відкритті (опційно, якщо додаєш клас на body з JS) */
 body.mm-lock {
   position: fixed;
   overflow: hidden;
   width: 100%;
 }
 
-/* На десктопі мобільне меню ховаємо (використовуєш desktop-nav) */
 @media (min-width: 1200px) {
   .mm-overlay {
     display: none;
