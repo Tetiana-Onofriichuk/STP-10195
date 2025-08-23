@@ -1,42 +1,33 @@
-const observer = new MutationObserver(() => {
-  const burger = document.querySelector('.burger');
-  const modalMenu = document.querySelector('.modal-menu');
-  const overlay = document.getElementById('mobileMenu');
-  const closeBtn = document.getElementById('mmClose');
+document.addEventListener('DOMContentLoaded', () => {
+  const burger = document.querySelector('.js-mm-open');
+  const modal = document.querySelector('.modal-menu');
+  const overlay = modal?.querySelector('.mm-overlay');
+  const closeBtn = modal?.querySelector('.mm-close');
+  const links = modal?.querySelectorAll('.mm-link') || [];
 
-  if (!burger || !modalMenu || !overlay || !closeBtn) return;
-
-  const links = overlay.querySelectorAll('.mm-link');
-
-  function openMenu() {
-    modalMenu.classList.add('is-open');
-    overlay.classList.add('is-open');
+  const openMenu = () => {
+    modal.classList.add('is-open');
+    burger.classList.add('is-open');
     burger.setAttribute('aria-expanded', 'true');
-    overlay.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('mm-lock');
-  }
+    document.body.classList.add('no-scroll');
+  };
 
-  function closeMenu() {
-    modalMenu.classList.remove('is-open');
-    overlay.classList.remove('is-open');
+  const closeMenu = () => {
+    modal.classList.remove('is-open');
+    burger.classList.remove('is-open');
     burger.setAttribute('aria-expanded', 'false');
-    overlay.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('mm-lock');
-  }
+    document.body.classList.remove('no-scroll');
+  };
 
   burger.addEventListener('click', () => {
-    const isOpen = modalMenu.classList.contains('is-open');
-    isOpen ? closeMenu() : openMenu();
+    modal.classList.contains('is-open') ? closeMenu() : openMenu();
   });
 
-  closeBtn.addEventListener('click', closeMenu);
-  links.forEach(link => link.addEventListener('click', closeMenu));
+  closeBtn?.addEventListener('click', closeMenu);
 
-  observer.disconnect(); // більше не потрібно слідкувати
-});
+  overlay?.addEventListener('click', e => {
+    if (e.target === overlay) closeMenu();
+  });
 
-// Слідкуємо за вставленням елементів у body
-observer.observe(document.body, {
-  childList: true,
-  subtree: true,
+  links.forEach(a => a.addEventListener('click', closeMenu));
 });

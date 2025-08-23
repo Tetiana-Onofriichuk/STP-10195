@@ -7,9 +7,9 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 20px;
   justify-content: center;
-  column-gap: 20px;
+  column-gap: 16px;
 }
 .characters-card {
   display: flex;
