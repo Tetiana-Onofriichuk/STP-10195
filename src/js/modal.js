@@ -1,32 +1,42 @@
-document.addEventListener('DOMContentLoaded', () => {
+const observer = new MutationObserver(() => {
   const burger = document.querySelector('.burger');
+  const modalMenu = document.querySelector('.modal-menu');
   const overlay = document.getElementById('mobileMenu');
   const closeBtn = document.getElementById('mmClose');
-  const burgerIcon = burger.querySelector('use');
 
-  const iconBurger = '/img/sprite.svg#icon-burger';
-  const iconClose = '/img/sprite.svg#icon-close';
+  if (!burger || !modalMenu || !overlay || !closeBtn) return;
 
-  function toggleMenu() {
-    const isOpen = overlay.classList.toggle('is-open');
-    document.body.classList.toggle('mm-lock', isOpen);
+  const links = overlay.querySelectorAll('.mm-link');
 
-    burgerIcon.setAttribute('href', isOpen ? iconClose : iconBurger);
-
-    burger.setAttribute('aria-expanded', isOpen);
-    overlay.setAttribute('aria-hidden', !isOpen);
+  function openMenu() {
+    modalMenu.classList.add('is-open');
+    overlay.classList.add('is-open');
+    burger.setAttribute('aria-expanded', 'true');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('mm-lock');
   }
 
-  burger.addEventListener('click', toggleMenu);
-  closeBtn.addEventListener('click', toggleMenu);
+  function closeMenu() {
+    modalMenu.classList.remove('is-open');
+    overlay.classList.remove('is-open');
+    burger.setAttribute('aria-expanded', 'false');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('mm-lock');
+  }
 
-  overlay.querySelectorAll('.mm-link').forEach(link => {
-    link.addEventListener('click', () => {
-      overlay.classList.remove('is-open');
-      document.body.classList.remove('mm-lock');
-      burgerIcon.setAttribute('href', iconBurger);
-      burger.setAttribute('aria-expanded', false);
-      overlay.setAttribute('aria-hidden', true);
-    });
+  burger.addEventListener('click', () => {
+    const isOpen = modalMenu.classList.contains('is-open');
+    isOpen ? closeMenu() : openMenu();
   });
+
+  closeBtn.addEventListener('click', closeMenu);
+  links.forEach(link => link.addEventListener('click', closeMenu));
+
+  observer.disconnect(); // більше не потрібно слідкувати
+});
+
+// Слідкуємо за вставленням елементів у body
+observer.observe(document.body, {
+  childList: true,
+  subtree: true,
 });
