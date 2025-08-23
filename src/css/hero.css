@@ -40,7 +40,7 @@
 }
 .btn-link {
   box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.25);
-  background-color: #deffc9;
+  background-color: #cfffb2;
   min-width: 280px;
   height: 40px;
   display: flex;
@@ -52,7 +52,10 @@
   left: 15px;
   z-index: 10;
 }
-.burger-icon:hover {
+.btn-link:active {
+  background-color: #e6ffd7;
+}
+.burger-icon:active {
   stroke: #515151;
 }
 .hero-cat {
@@ -119,6 +122,17 @@
     left: 234px;
     top: 264px;
   }
+
+  .btn-link:hover {
+    background-color: #deffc9;
+  }
+  .btn-link:focus {
+    background-color: #deffc9;
+  }
+  .btn-link:active {
+    background-color: #e6ffd7;
+  }
+
   .hero-pazl-one {
     display: block;
     position: absolute;

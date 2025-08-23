@@ -1,11 +1,11 @@
-
 ol {
-    margin: 0;
-    padding-left: 16px;
+  margin: 0;
+  padding-left: 16px;
 }
 
 @media only screen and (min-width: 1200px) {
-    .cookies-container {
-        width: 1200px;
-        padding: 32px 84px 24px 84px;
-    }}
+  .cookies-container {
+    width: 1200px;
+    padding: 32px 84px 24px 84px;
+  }
+}
