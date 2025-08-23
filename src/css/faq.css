@@ -1,0 +1,100 @@
+.faq-title {
+font-family: "Coiny", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    color: #04090f;
+    margin-bottom: 12px;
+}
+
+.js-box {
+  position: relative;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.js-box.first {
+  background-color: #ffc9e6;
+}
+.js-box.second {
+  background-color: #deffc9;
+}
+
+.js-box.third {
+  background-color: #ffdbc9;
+}
+
+.js-box.fourth {
+  background-color: #aceaf7;
+}
+.js-box.fifth {
+  background-color: #fff5c9;
+  white-space: normal;
+}
+
+.js-trigger {
+  position: relative;
+  padding: 16px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  cursor: pointer;
+}
+
+.js-trigger::after {
+  content: '+';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 12px;
+  font-size: 20px;
+}
+.js-box.active .js-trigger::after {
+  content: '\2715';
+}
+
+.js-content {
+  display: none;
+transition: 0.3s ease;
+  font-size: 12px;
+}
+.js-content.open {
+  display: block;
+}
+
+.js-text {
+  padding: 16px;
+  padding-top: 0;
+}
+
+
+@media only screen and (min-width: 1200px) {
+ .faq-title{
+        font-size: 36px;
+ }   
+
+ .js-box-container{
+display: flex;
+flex-wrap: wrap;
+column-gap: 40px;
+row-gap: 20px ;
+ }
+
+.js-box{
+    width: 496px;
+}
+ .js-trigger{
+        font-size: 20px;
+        line-height: 1.5;
+        letter-spacing: -0.02em;
+ }
+ .js-text{
+    font-size: 18px;
+ }
+
+ .js-trigger::after{
+    right: 16px;
+        font-size: 28px;
+ }
+}
