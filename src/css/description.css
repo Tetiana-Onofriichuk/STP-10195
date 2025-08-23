@@ -1,9 +1,12 @@
-.description {
-  padding-bottom: 54px;
+.contsiner-description {
+  margin-bottom: 56px;
 }
+
+
 .description-container {
   max-width: 716px;
 }
+
 .description-title {
   font-family: 'Coiny', sans-serif;
   font-weight: 400;
