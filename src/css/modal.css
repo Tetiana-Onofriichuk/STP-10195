@@ -1,0 +1,102 @@
+.header {
+  position: fixed;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1100;
+}
+
+.mm-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
+  z-index: 1000;
+}
+
+.mm-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mm-panel {
+  position: absolute;
+  left: 50%;
+  top: var(--header-bottom);
+  transform: translate(-50%, -12px);
+  width: min(92vw, var(--pill-width));
+  background: var(--pill-bg);
+  border-radius: var(--pill-radius);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 1050;
+}
+
+.mm-overlay.is-open .mm-panel {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+.mm-close {
+  align-self: flex-end;
+  background: transparent;
+  border: 0;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.mm-list {
+  list-style: none;
+  margin: 0;
+  padding: 8px 16px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.mm-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 8px;
+  font-size: 18px;
+  color: #0e1823;
+  text-decoration: none;
+  border-bottom: 1px solid #d4c77f;
+}
+.mm-link-feaut {
+  fill: black;
+}
+.mm-link:last-child {
+  border-bottom: none;
+}
+.mm-ico {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  fill: none;
+}
+
+body.mm-lock {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .mm-overlay {
+    display: none;
+  }
+}
