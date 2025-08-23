@@ -1,38 +1,60 @@
-.header {
-  position: fixed;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1100; /* вище ніж overlay */
+.modal-menu {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  position: absolute;
+  top: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  justify-content: center;
+  align-items: start;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    visibily 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Бекдроп */
+:root {
+  --main-yellow: #fff5c0;
+  --pill-bg: var(--main-yellow);
+  --pill-radius: 16px;
+  --pill-width: 320px;
+}
+
 .mm-overlay {
   position: fixed;
-  left: 0;
-  right: 0;
-  top: 0; /* перекриває все, не від header-bottom */
-  bottom: 0;
+  inset: 0;
   background: rgba(0, 0, 0, 0.45);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.28s ease, visibility 0.28s ease;
-  z-index: 1000; /* нижче хедера */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
 }
 
-.mm-overlay.is-open {
+.modal-menu.is-open {
+  padding-top: 70px;
   opacity: 1;
   visibility: visible;
-  pointer-events: auto;
+  pointer-events: all;
+  /*animation: fadeInDown 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);*/
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 90;
 }
 
-/* Панель */
+.nav-modal {
+  position: relative;
+  max-width: 280px;
+}
+
 .mm-panel {
   position: absolute;
   left: 50%;
-  top: var(--header-bottom);
-  transform: translate(-50%, -12px);
+  top: 70px;
+  transform: translateX(-50%);
   width: min(92vw, var(--pill-width));
   background: var(--pill-bg);
   border-radius: var(--pill-radius);
@@ -41,50 +63,106 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+
   opacity: 0;
-  z-index: 1050; /* вище за бекдроп, але нижче за хедер */
+  visibility: hidden;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .mm-overlay.is-open .mm-panel {
-  transform: translate(-50%, 0);
+  transform: translateX(-50%) translateY(0);
+
   opacity: 1;
+  visibility: visible;
+  animation: fadeInDown 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1500;
 }
-/* Кнопка закриття (якщо використовуєш) */
+
+.nav-modal-list {
+  padding: 12px 0;
+}
+
 .mm-close {
-  align-self: flex-end;
+  position: absolute;
+  top: 12px;
+  right: 16px;
   background: transparent;
   border: 0;
-  padding: 10px 12px;
+  padding: 0;
   cursor: pointer;
   font-size: 22px;
   line-height: 1;
+  z-index: 9999;
 }
 
-/* Список пунктів */
 .mm-list {
-  list-style: none;
+  padding: 0;
   margin: 0;
-  padding: 8px 16px 16px 16px;
+
   display: flex;
+  align-items: center;
+  justify-content: flex-end;
   flex-direction: column;
-  gap: 0;
+
+  box-shadow: 2px 2px 8px 0 rgba(4, 9, 15, 0.24);
+  background-color: var(--main-yellow);
+  border-radius: 12px;
 }
+
+.nav-item-modal {
+  width: 100%;
+
+  background-color: var(--main-yellow);
+  border-radius: 12px;
+  box-shadow: 2px 2px 8px rgba(4, 9, 15, 0.24);
+}
+
+.mm-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  position: relative;
+}
+.mm-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ffec95;
+  width: 256px;
+  height: 0px;
+}
+
 .mm-link {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 16px 8px;
-  font-size: 18px;
-  color: #0e1823;
-  text-decoration: none;
-  border-bottom: 1px solid #d4c77f; /* більш чітка риска */
+  justify-content: start;
+  position: relative;
 }
+
+.nav-item-modal:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ffec95;
+  width: 256px;
+  height: 0px;
+}
+
+.mm-link:last-child {
+  border-bottom: none;
+}
+
 .mm-link-feaut {
   fill: black;
 }
-.mm-link:last-child {
-  border-bottom: none; /* останній пункт без риски */
-}
+
 .mm-ico {
   width: 24px;
   height: 24px;
@@ -92,16 +170,24 @@
   fill: none;
 }
 
-/* Лок скролу при відкритті (опційно, якщо додаєш клас на body з JS) */
-body.mm-lock {
-  position: fixed;
-  overflow: hidden;
+.nav-modal-list .nav-link {
+  display: flex;
   width: 100%;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  padding: 20px 6px 20px 32px;
 }
 
-/* На десктопі мобільне меню ховаємо (використовуєш desktop-nav) */
-@media (min-width: 1200px) {
-  .mm-overlay {
+.modal-menu-icon {
+  stroke: black;
+  fill: var(--main-yellow);
+}
+
+@media only screen and (min-width: 1200px) {
+  .modal-menu {
     display: none;
+    z-index: 0;
+    pointer-events: none;
   }
 }

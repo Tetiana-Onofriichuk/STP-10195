@@ -1,19 +1,97 @@
-.cookies-btn{
-font-family:"Open Sans", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.29;
-    text-align: center;
-    color: #04090f;
+.cookies-container{
+    padding-top: 12px;
+    padding-bottom: 0;
+    width: 280px;
 }
-.cookies-item{
-font-weight: 600;
+.cookies-btn {
+    display: flex;
+    align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  text-align: center;
+  color: #04090f;
+margin-bottom: 8px;
 }
 
-.cookies-title{
-    font-family: "Coiny", sans-serif;
-        font-weight: 400;
-        font-size: 18px;
-        text-align: center;
-        color: #04090f;
+.cookies-item {
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 4px;
+margin-top: 20px;
+}
+
+.cookies-title {
+font-family: "Coiny", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    color: #04090f;
+    margin-bottom: 4px;
+}
+.cookies-list{
+    list-style:inside;
+    font-size: 12px;
+}
+
+.cookies-date{
+font-weight: 600;
+margin-bottom: 16px;
+}
+.cookies-text{
+    font-size: 12px;
+}
+
+.cookies-date span{
+font-weight: 400;
+}
+
+.cookies-text.parag{
+    text-indent: 6px;
+}
+ol{
+    margin: 0;
+    padding-left: 16px;
+}
+.cookies-footer-container{
+    padding: 28px 20px 12px 20px;
+}
+
+@media only screen and (min-width: 1200px) {
+.cookies-container{
+ width: 1200px;
+ padding: 32px 84px 24px 84px;
+}
+.cookies-btn{
+    font-size: 24px;
+    margin-bottom: 16px;
+
+}
+
+.cookies-title {
+    font-size: 36px;
+    margin-bottom: 22px;
+}
+.cookies-date {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    margin-bottom: 26px;
+}
+
+.cookies-item {
+font-size: 18px;
+    margin-bottom: 8px;
+    margin-top: 32px;
+}
+
+.cookies-text{
+    font-size: 18px;
+}
+
+.cookies-list{
+    font-size: 18px;
+}
 }
