@@ -40,7 +40,6 @@
   opacity: 1;
   visibility: visible;
   pointer-events: all;
-  /*animation: fadeInDown 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);*/
   background: rgba(0, 0, 0, 0.4);
   z-index: 90;
 }
@@ -71,7 +70,6 @@
 
 .mm-overlay.is-open .mm-panel {
   transform: translateX(-50%) translateY(0);
-
   opacity: 1;
   visibility: visible;
   animation: fadeInDown 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
