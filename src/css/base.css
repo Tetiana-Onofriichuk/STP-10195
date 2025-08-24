@@ -1,7 +1,7 @@
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-bottom);
 }
-
 *,
 *::before,
 *::after {
@@ -11,7 +11,7 @@ html {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  font-weight: 400; /* базово Regular */
+  font-weight: 400;
   color: #242424;
 
   font-synthesis: none;
