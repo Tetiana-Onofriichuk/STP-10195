@@ -1,0 +1,28 @@
+.scroll-up {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: #ffdbc9;
+  color: #0f0f0f;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.scroll-up.show {
+  display: flex;
+}
+.scrollup-icon {
+  fill: transparent;
+  stroke: #0f0f0f;
+  transform: rotate(270deg);
+}
