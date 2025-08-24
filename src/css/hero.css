@@ -3,7 +3,7 @@
 .hero-container {
   margin-top: 0px;
   display: flex;
-  padding: 16px 32px 156px 32px;
+  padding: 16px 32px 212px 32px;
   gap: 16px;
   justify-content: center;
   position: relative;
@@ -143,6 +143,9 @@
     left: 432px;
     top: 264px;
     cursor: pointer;
+  }
+  .download-link {
+    font-size: 20px;
   }
   .hero-download-icon {
     width: 24px;
