@@ -1,3 +1,22 @@
+/* =========  Глобальні змінні  ========= */
+:root {
+  /* мобільні значення за замовчуванням */
+  --slide-dist: 28px; /* дистанція виїзду */
+  --slide-dur: 0.6s; /* тривалість анімації */
+  --card-w: 282px; /* ширина картки на мобільному */
+}
+
+/* десктопні значення */
+@media (min-width: 1200px) {
+  :root {
+    --slide-dist: 60px;
+    --slide-dur: 0.7s;
+    --card-w: 660px; /* ширина картки на десктопі */
+  }
+}
+
+/* =========  Features  ========= */
+
 .features-container {
   padding: 0;
   position: relative;
@@ -6,6 +25,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .features-title {
   font-family: 'Coiny', sans-serif;
   font-weight: 400;
@@ -13,23 +33,47 @@
   text-align: center;
   padding-bottom: 12px;
 }
+
 .features-list {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: stretch; /* важливо: дозволяє auto-margin притискати картки до країв */
   justify-content: center;
   gap: 12px;
   width: 100%;
 }
 
+/* Елемент списку + стартовий стан анімації */
 .features-items {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  width: 282px;
+
+  width: var(--card-w);
+  margin: 0; /* обнуляємо, далі керуємо auto-margin'ами */
+
+  /* анімація появи */
+  opacity: 0;
+  transform: translateX(var(--from, var(--slide-dist)));
+  transition: transform var(--slide-dur) ease, opacity var(--slide-dur) ease;
+  will-change: transform, opacity;
 }
+
+/* Нечітні: зліва, виїзд зліва */
+.features-items:nth-child(odd) {
+  flex-direction: row-reverse; /* текст ліворуч, іконка праворуч */
+  margin-right: auto; /* притиснути до ЛІВОГО краю */
+  --from: calc(var(--slide-dist) * -1); /* старт зліва */
+}
+
+/* Парні: справа, виїзд справа (за замовчуванням) */
+.features-items:nth-child(even) {
+  margin-left: auto; /* притиснути до ПРАВОГО краю */
+}
+
+/* Текст */
 .features-item-text {
   font-weight: 400;
   font-size: 10px;
@@ -37,16 +81,14 @@
   color: #04090f;
   text-indent: 6px;
 }
-.features-items:nth-child(odd) {
-  flex-direction: row-reverse;
-  align-self: flex-start;
-}
 
+/* Для парних «булька» відкривається вліво */
 .features-items:nth-child(even) .features-item-text-wrapper {
   padding: 8px 12px 8px 20px;
   border-radius: 80px 0 0 80px;
 }
 
+/* Іконка */
 .features-item-image-wrapper {
   display: flex;
   align-items: center;
@@ -58,11 +100,24 @@
   height: 32px;
   box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.25);
   background: var(--main-yellow);
+
+  /* легкий масштаб при появі */
+  transform: scale(0.92);
+  transition: transform var(--slide-dur) ease;
 }
+
+.modal-menu-icon {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  fill: none;
+}
+
+/* Текстовий контейнер (за замовчуванням «булька» відкривається вправо — для нечітних) */
 .features-item-text-wrapper {
   display: flex;
   align-items: center;
-  max-width: 242px;
+  max-width: calc(var(--card-w) - 40px);
   width: 100%;
   justify-content: center;
   padding: 8px 20px 8px 12px;
@@ -71,37 +126,38 @@
   height: 100%;
   box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.25);
 }
-.modal-menu-icon {
-  width: 24px;
-  height: 24px;
-  stroke: currentColor;
-  fill: none;
+
+/* Стан коли елемент у вʼюпорті (додається JS) */
+.features-items.in-view {
+  opacity: 1;
+  transform: translateX(0);
 }
-.features-one {
-  display: none;
+.features-items.in-view .features-item-image-wrapper {
+  transform: scale(1);
 }
-.features-two {
-  display: none;
-}
+
+/* Декори (мобільно ховаємо) */
+.features-one,
+.features-two,
 .features-three {
   display: none;
 }
+
+/* Кольори карток */
 .features-item-text-wrapper.pink {
   background-color: #ffc9e6;
 }
-
 .features-item-text-wrapper.blue {
   background-color: #aceaf7;
 }
-
 .features-item-text-wrapper.peach {
   background-color: #ffdbc9;
 }
-
 .features-item-text-wrapper.green {
   background-color: #deffc9;
 }
 
+/* =========  Desktop ≥1200px  ========= */
 @media only screen and (min-width: 1200px) {
   .features {
     margin-bottom: 116px;
@@ -118,25 +174,22 @@
 
   .features-items {
     height: 132px;
-    width: 660px;
     gap: 16px;
   }
 
   .features-item-text-wrapper {
     padding: 24px 32px 24px 26px;
-    max-width: 588px;
+    max-width: calc(var(--card-w) - 72px);
   }
 
   .features-item-image-wrapper {
     width: 50px;
     height: 50px;
   }
-
   .features .modal-menu-icon {
     width: 36px;
     height: 36px;
   }
-
   .features-item-text {
     font-size: 20px;
     line-height: 150%;
@@ -152,23 +205,6 @@
     z-index: 0;
   }
 
-  .features-top {
-    position: absolute;
-    right: 0;
-    bottom: 220px;
-    transform: rotate(-23deg);
-  }
-
-  .features-middle {
-    position: absolute;
-    right: 20px;
-    bottom: 100px;
-  }
-
-  .features-bottom {
-    position: absolute;
-    bottom: 0;
-  }
   .features-one {
     display: block;
     position: absolute;
@@ -185,5 +221,18 @@
     display: block;
     position: absolute;
     bottom: -20px;
+  }
+}
+
+/* =========  Accessibility  ========= */
+@media (prefers-reduced-motion: reduce) {
+  .features-items {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+  .features-item-image-wrapper {
+    transition: none;
+    transform: none;
   }
 }
