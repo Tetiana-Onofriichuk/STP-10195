@@ -1,21 +1,16 @@
-/* =========  Глобальні змінні  ========= */
 :root {
-  /* мобільні значення за замовчуванням */
-  --slide-dist: 28px; /* дистанція виїзду */
-  --slide-dur: 0.6s; /* тривалість анімації */
-  --card-w: 282px; /* ширина картки на мобільному */
+  --slide-dist: 28px;
+  --slide-dur: 0.6s;
+  --card-w: 282px;
 }
 
-/* десктопні значення */
 @media (min-width: 1200px) {
   :root {
     --slide-dist: 60px;
     --slide-dur: 0.7s;
-    --card-w: 660px; /* ширина картки на десктопі */
+    --card-w: 660px;
   }
 }
-
-/* =========  Features  ========= */
 
 .features-container {
   padding: 0;
@@ -38,13 +33,12 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: stretch; /* важливо: дозволяє auto-margin притискати картки до країв */
+  align-items: stretch;
   justify-content: center;
   gap: 12px;
   width: 100%;
 }
 
-/* Елемент списку + стартовий стан анімації */
 .features-items {
   display: flex;
   align-items: center;
@@ -52,28 +46,24 @@
   gap: 6px;
 
   width: var(--card-w);
-  margin: 0; /* обнуляємо, далі керуємо auto-margin'ами */
+  margin: 0;
 
-  /* анімація появи */
   opacity: 0;
   transform: translateX(var(--from, var(--slide-dist)));
   transition: transform var(--slide-dur) ease, opacity var(--slide-dur) ease;
   will-change: transform, opacity;
 }
 
-/* Нечітні: зліва, виїзд зліва */
 .features-items:nth-child(odd) {
-  flex-direction: row-reverse; /* текст ліворуч, іконка праворуч */
-  margin-right: auto; /* притиснути до ЛІВОГО краю */
-  --from: calc(var(--slide-dist) * -1); /* старт зліва */
+  flex-direction: row-reverse;
+  margin-right: auto;
+  --from: calc(var(--slide-dist) * -1);
 }
 
-/* Парні: справа, виїзд справа (за замовчуванням) */
 .features-items:nth-child(even) {
-  margin-left: auto; /* притиснути до ПРАВОГО краю */
+  margin-left: auto;
 }
 
-/* Текст */
 .features-item-text {
   font-weight: 400;
   font-size: 10px;
@@ -82,13 +72,11 @@
   text-indent: 6px;
 }
 
-/* Для парних «булька» відкривається вліво */
 .features-items:nth-child(even) .features-item-text-wrapper {
   padding: 8px 12px 8px 20px;
   border-radius: 80px 0 0 80px;
 }
 
-/* Іконка */
 .features-item-image-wrapper {
   display: flex;
   align-items: center;
@@ -101,7 +89,6 @@
   box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.25);
   background: var(--main-yellow);
 
-  /* легкий масштаб при появі */
   transform: scale(0.92);
   transition: transform var(--slide-dur) ease;
 }
@@ -113,7 +100,6 @@
   fill: none;
 }
 
-/* Текстовий контейнер (за замовчуванням «булька» відкривається вправо — для нечітних) */
 .features-item-text-wrapper {
   display: flex;
   align-items: center;
@@ -127,7 +113,6 @@
   box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.25);
 }
 
-/* Стан коли елемент у вʼюпорті (додається JS) */
 .features-items.in-view {
   opacity: 1;
   transform: translateX(0);
@@ -136,14 +121,12 @@
   transform: scale(1);
 }
 
-/* Декори (мобільно ховаємо) */
 .features-one,
 .features-two,
 .features-three {
   display: none;
 }
 
-/* Кольори карток */
 .features-item-text-wrapper.pink {
   background-color: #ffc9e6;
 }
@@ -157,7 +140,6 @@
   background-color: #deffc9;
 }
 
-/* =========  Desktop ≥1200px  ========= */
 @media only screen and (min-width: 1200px) {
   .features {
     margin-bottom: 116px;
@@ -224,7 +206,6 @@
   }
 }
 
-/* =========  Accessibility  ========= */
 @media (prefers-reduced-motion: reduce) {
   .features-items {
     transition: none;
