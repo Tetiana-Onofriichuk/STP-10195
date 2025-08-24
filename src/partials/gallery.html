@@ -1,0 +1,44 @@
+<div class="container gallery-container">
+    <h2 class="gallery-title">Gallery</h2>
+    <div class="gallery-swiper swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide gallery-slide">
+                <picture>
+                    <source srcset="/img/gallery/gallery-desk-1.webp 1x, /img/gallery/gallery-desk-1@2x.webp 2x"
+                        media="(min-width: 1200px)">
+                    <source srcset="/img/gallery/gallery-1.webp 1x, /img/gallery/gallery-1@2x.webp 2x"
+                        media="(max-width: 1199px)">
+                    <img class="gallery-img" src="/img/gallery/gallery-1.webp" alt="gallery-1">
+                </picture>
+            </div>
+            <div class="swiper-slide">
+                <picture>
+                    <source srcset="/img/gallery/gallery-desk-2.webp 1x, /img/gallery/gallery-desk-2@2x.webp 2x"
+                        media="(min-width: 1200px)">
+                    <source srcset="/img/gallery/gallery-2.webp 1x, /img/gallery/gallery-2@2x.webp 2x"
+                        media="(max-width: 1199px)">
+                    <img class="gallery-img" src="/img/gallery/gallery-2.webp" alt="gallery-1">
+                </picture>
+            </div>
+            <div class="swiper-slide">
+                <picture>
+                    <source srcset="/img/gallery/gallery-desk-3.webp 1x, /img/gallery/gallery-desk-3@2x.webp 2x"
+                        media="(min-width: 1200px)">
+                    <source srcset="/img/gallery/gallery-3.webp 1x, /img/gallery/gallery-3@2x.webp 2x"
+                        media="(max-width: 1199px)">
+                    <img class="gallery-img" src="/img/gallery/gallery-3.webp" alt="gallery-1">
+                </picture>
+            </div>
+        </div>
+
+        <div class="gallery-pagination"></div>
+        <div class="gallery-btn-swiper">
+            <div class="swiper-btn-prev gallery-swiper-button-prev"><svg class="gallery-svg" width="50" height="50">
+                    <use href="/img/sprite.svg#icon-left"></use>
+                </svg></div>
+            <div class="swiper-btn-next gallery-swiper-button-next"><svg class="gallery-svg" width="50" height="50">
+                    <use href="/img/sprite.svg#icon-right"></use>
+                </svg></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+  .gallery-container {
+      padding-bottom: 0;
+      padding-top: 0;
+  }
+.gallery-title {
+  font-family: 'Coiny', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  color: #04090f;
+  margin-bottom: 12px;
+}
+
+.gallery-img{
+    border-radius: 20px;
+        box-shadow: 2px 4px 8px 0 rgba(4, 9, 15, 0.24);
+}
+
+
+.gallery-swiper-button-prev,
+.gallery-swiper-button-next{
+    display: none;
+}
+
+.gallery-pagination{
+padding-top: 12px;
+padding-left: 120px;
+}
+
+@media only screen and (min-width: 1200px) {
+.gallery-container {
+        padding-top: 104px;
+    }
+    .gallery-img {
+    width: 537px;
+    height: 318px;
+    margin: 0 auto;
+  }
+  .gallery-title{
+    font-size: 34px;
+    margin-bottom: 24px;
+  }
+
+  .gallery-svg{
+stroke-width: 2.60px;
+    stroke: #3a3b3c;
+    fill: none;
+  }
+.gallery-swiper-button-prev,
+.gallery-swiper-button-next {
+    display: block;
+}
+.gallery-btn-swiper{
+display: flex;
+flex-direction: row;
+justify-content: center;
+gap: 32px;
+margin-top: 18px;
+
+}
+.gallery-pagination {
+   display: none;
+}
+.button-dis {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: default;
+}
+}
