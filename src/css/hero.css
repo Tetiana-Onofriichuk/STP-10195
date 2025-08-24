@@ -22,7 +22,17 @@
   display: none;
 }
 .hero-text {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
 }
+.download-link {
+  font-family: 'coiny';
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+}
+
 .hero-picture {
   position: absolute;
   right: 24px;
@@ -56,6 +66,7 @@
   transform: translateX(-50%);
 
   z-index: 10;
+  margin-bottom: 56px;
 }
 .hero-download-icon {
   margin-right: 12px;

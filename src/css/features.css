@@ -71,10 +71,13 @@
   color: #04090f;
   text-indent: 6px;
 }
-
+.features-items .features-item-text-wrapper {
+  border-radius: 80px;
+  height: 60px;
+}
 .features-items:nth-child(even) .features-item-text-wrapper {
   padding: 8px 12px 8px 20px;
-  border-radius: 80px 0 0 80px;
+  border-radius: 80px;
 }
 
 .features-item-image-wrapper {
@@ -157,6 +160,9 @@
   .features-items {
     height: 132px;
     gap: 16px;
+  }
+  .features-items .features-item-text-wrapper {
+    height: 132px;
   }
 
   .features-item-text-wrapper {
