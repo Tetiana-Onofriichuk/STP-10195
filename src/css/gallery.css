@@ -1,6 +1,7 @@
   .gallery-container {
       padding-bottom: 0;
       padding-top: 0;
+
   }
 .gallery-title {
   font-family: 'Coiny', sans-serif;
@@ -11,10 +12,16 @@
   margin-bottom: 12px;
 }
 
+.gallery-slide{
+display: flex;
+justify-content: center;
+}
+
 .gallery-img{
     border-radius: 20px;
         box-shadow: 2px 4px 8px 0 rgba(4, 9, 15, 0.24);
-}
+display: block;
+  margin: 0 auto;}
 
 
 .gallery-swiper-button-prev,
@@ -24,7 +31,9 @@
 
 .gallery-pagination{
 padding-top: 12px;
-padding-left: 120px;
+display: flex;
+justify-content: center;
+
 }
 
 @media only screen and (min-width: 1200px) {
