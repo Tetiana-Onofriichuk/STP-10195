@@ -77,9 +77,24 @@
     width: 684px;
     font-weight: 400;
   }
+  .first-button {
+    border-radius: 20px;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.25);
+
+    width: 264px;
+    height: 60px;
+    font-size: 20px;
+  }
   .first-button:hover,
   .first-button:focus {
     background-color: #e6ffd7;
+  }
+  .second-button {
+    border-radius: 20px;
+    font-size: 20px;
+    width: 264px;
+    height: 60px;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.25);
   }
   .second-button:hover,
   .second-button:focus {
