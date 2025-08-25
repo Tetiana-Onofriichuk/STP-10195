@@ -12,7 +12,7 @@
   justify-content: center;
   column-gap: 16px;
 }
-.characters-card {
+.js-characters-card {
   display: flex;
   flex-direction: column;
   max-width: 132px;
@@ -40,7 +40,7 @@
   .characters-title {
     font-size: 36px;
   }
-  .characters-card {
+  .js-characters-card {
     max-width: 288px;
   }
   .characters-name {

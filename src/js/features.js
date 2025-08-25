@@ -1,4 +1,4 @@
-const items = document.querySelectorAll('.features-items');
+const items = document.querySelectorAll('.js-features-items');
 
 const isDesktop = matchMedia('(min-width:1200px)').matches;
 

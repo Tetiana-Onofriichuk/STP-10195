@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const img = document.querySelector('.hero-picture .hero-img');
+  const img = document.querySelector('.js-hero-picture .js-hero-img');
   if (!img) return;
 
   const reveal = () => img.classList.add('is-visible');
