@@ -5,12 +5,11 @@ import 'swiper/css/pagination';
 import Swiper from 'swiper';
 import { Navigation, Keyboard, Pagination } from 'swiper/modules';
 
-
 const swiper = new Swiper('.gallery-swiper', {
   loop: false,
   speed: 600,
   grabCursor: true,
-  slidesPerView: "auto",
+  slidesPerView: 'auto',
   centeredSlides: true,
   spaceBetween: 20,
   modules: [Navigation, Keyboard, Pagination],
@@ -22,8 +21,8 @@ const swiper = new Swiper('.gallery-swiper', {
     enabled: true,
     onlyInViewport: true,
     pageUpDown: true,
-    },
-   pagination: {
+  },
+  pagination: {
     el: '.gallery-pagination',
     clickable: true,
   },
@@ -54,4 +53,3 @@ function updateNavButtons(swiperIns) {
     nextBut.classList.remove('button-dis');
   }
 }
-
