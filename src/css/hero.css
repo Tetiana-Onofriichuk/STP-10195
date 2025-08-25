@@ -1,7 +1,7 @@
 .container {
 }
 .hero-container {
-  margin-top: 0px;
+  margin-top: 84px;
   display: flex;
   padding: 16px 32px 256px 32px;
   gap: 16px;
@@ -106,6 +106,7 @@
   .hero-container {
     padding: 72px 116px 72px 192px;
     margin-bottom: 364px;
+    margin-top: 132px;
   }
   .hero-cat {
     display: none;

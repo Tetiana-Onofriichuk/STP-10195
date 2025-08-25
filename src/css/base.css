@@ -28,8 +28,6 @@ body {
   flex-direction: column;
   min-width: 100vw;
   min-height: 100vh;
-  padding-top: 84px;
-
   font-family: 'Open Sans', sans-serif; /* Regular 400 */
   font-weight: 400;
   font-style: normal;
