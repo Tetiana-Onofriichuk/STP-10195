@@ -17,6 +17,10 @@ font-family: "Coiny", sans-serif;
 .js-box.first {
   background-color: #ffc9e6;
 }
+
+/* .js-box.first:hover{
+  background-color: lightpink;
+} */
 .js-box.second {
   background-color: #deffc9;
 }
@@ -33,10 +37,7 @@ font-family: "Coiny", sans-serif;
   white-space: normal;
 }
 
-/* .js-trigger.trigger-fifth{
-  overflow-wrap: break-word;
-    width: 280px;
-} */
+
 .js-trigger {
   position: relative;
   padding: 16px;
@@ -54,6 +55,7 @@ font-family: "Coiny", sans-serif;
   right: 12px;
   font-size: 20px;
 }
+
 .js-box.active .js-trigger::after {
   content: '\2715';
 }

@@ -55,10 +55,20 @@ stroke-width: 2.60px;
     stroke: #3a3b3c;
     fill: none;
   }
+
+    .gallery-svg:hover {
+    stroke: #6f6f70;
+    }
+    
 .gallery-swiper-button-prev,
 .gallery-swiper-button-next {
     display: block;
+    cursor: pointer;
 }
+
+
+
+
 .gallery-btn-swiper{
 display: flex;
 flex-direction: row;

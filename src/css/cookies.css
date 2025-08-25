@@ -16,11 +16,26 @@
 margin-bottom: 8px;
 }
 
+.terms-btn:hover{
+color: #3a3b3c;
+}
+.terms-btn:active {
+color: #6f6f70;;
+}
+
+
 .terms-icon{
 stroke: black;
 fill: none;   
 }
+.terms-icon:hover{
+stroke: #3a3b3c;;
+}
 
+.terms-icon:active {
+    color: #6f6f70;
+    ;
+}
 .terms-item {
   font-weight: 600;
   font-size: 12px;
