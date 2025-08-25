@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const cards = [...document.querySelectorAll('.characters-card.reveal')];
+  const cards = [...document.querySelectorAll('.js-characters-card.reveal')];
 
   cards.forEach((card, i) => {
     card.classList.add(i % 2 === 0 ? 'from-left' : 'from-right');
