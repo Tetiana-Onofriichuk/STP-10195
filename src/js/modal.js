@@ -1,33 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const burger = document.querySelector('.js-mm-open');
-  const modal = document.querySelector('.modal-menu');
-  const overlay = modal?.querySelector('.mm-overlay');
-  const closeBtn = modal?.querySelector('.mm-close');
-  const links = modal?.querySelectorAll('.mm-link') || [];
+  const menu = document.querySelector('.js-modal-menu');
+  const overlay = menu?.querySelector('.js-mm-overlay');
+  const openBtn = document.querySelector('.burger.js-mm-open'); // твоя кнопка-бургер
+  const closeBtn = menu?.querySelector('.js-mm-close');
+  const links = menu?.querySelectorAll('.js-mm-link') || [];
+
+  if (!menu || !overlay || !openBtn || !closeBtn) return;
 
   const openMenu = () => {
-    modal.classList.add('is-open');
-    burger.classList.add('is-open');
-    burger.setAttribute('aria-expanded', 'true');
+    menu.classList.add('is-open');
+    openBtn.classList.add('is-open'); // ← бургер міняється на хрестик
     document.body.classList.add('no-scroll');
+    openBtn.setAttribute('aria-expanded', 'true');
+    overlay.setAttribute('aria-hidden', 'false');
   };
 
   const closeMenu = () => {
-    modal.classList.remove('is-open');
-    burger.classList.remove('is-open');
-    burger.setAttribute('aria-expanded', 'false');
+    menu.classList.remove('is-open');
+    openBtn.classList.remove('is-open'); // ← повертаємо бургер
     document.body.classList.remove('no-scroll');
+    openBtn.setAttribute('aria-expanded', 'false');
+    overlay.setAttribute('aria-hidden', 'true');
   };
 
-  burger.addEventListener('click', () => {
-    modal.classList.contains('is-open') ? closeMenu() : openMenu();
+  openBtn.addEventListener('click', () => {
+    if (menu.classList.contains('is-open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
 
-  closeBtn?.addEventListener('click', closeMenu);
-
-  overlay?.addEventListener('click', e => {
-    if (e.target === overlay) closeMenu();
+  closeBtn.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeMenu();
   });
 
-  links.forEach(a => a.addEventListener('click', closeMenu));
+  links.forEach(a => {
+    a.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
 });
