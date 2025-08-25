@@ -26,6 +26,10 @@ padding: 20px 0 8px 0;
   text-align: center;
   color: #04090f;
 }
+.footer-item:hover{
+color: #6f6f70;
+}
+
 
 .footer-text-item {
   font-size: 10px;
