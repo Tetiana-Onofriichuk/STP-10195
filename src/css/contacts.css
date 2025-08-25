@@ -1,51 +1,72 @@
 .contacts-container {
-    padding-top: 0;
-    padding-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  position: relative;
 }
 
 .contacts-title {
-    font-family: "Coiny", sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    text-align: center;
-    color: #04090f;
-    margin-bottom: 12px;
+  font-family: 'Coiny', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  color: #04090f;
+  margin-bottom: 12px;
 }
 
 .contacts-list-item {
-    font-weight: 600;
-    font-size: 14px;
-    color: #04090f;
-    margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #04090f;
+  margin-bottom: 4px;
 }
 
 .contacts-list-item:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .contacts-item {
-    font-weight: 400;
-    font-size: 12px;
+  font-weight: 400;
+  font-size: 12px;
 }
 
-
 @media only screen and (min-width: 1200px) {
-    .contacts-list {
-        padding-left: 288px;
-    }
+  .contacts-list {
+    padding-left: 288px;
+  }
 
-    .contacts-title {
-        font-size: 36px;
-        margin-bottom: 24px;
-    }
+  .contacts-title {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
 
-    .contacts-list-item {
-        font-size: 24px;
-        margin-bottom: 16px;
-    }
+  .contacts-list-item {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
 
-    .contacts-item {
-        font-size: 20px;
-    }
-
+  .contacts-item {
+    font-size: 20px;
+  }
+  .contacts-pazzl-one {
+    position: absolute;
+    top: -120px;
+    left: 120px;
+    z-index: -10;
+  }
+  .contacts-pazzl-two {
+    position: absolute;
+    bottom: -60px;
+    right: 100px;
+  }
+  .contacts-pazzl-three {
+    position: absolute;
+    left: 120px;
+    bottom: -150px;
+    z-index: -10;
+  }
+  .contacts-pazzl-pazl-four {
+    position: absolute;
+    right: 80px;
+    bottom: 240px;
+  }
 }
