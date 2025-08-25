@@ -28,6 +28,18 @@
   font-weight: 400;
   font-size: 12px;
 }
+.contacts-pazzl-one {
+  display: none;
+}
+.contacts-pazzl-two {
+  display: none;
+}
+.contacts-pazzl-three {
+  display: none;
+}
+.contacts-pazzl-pazl-four {
+  display: none;
+}
 
 @media only screen and (min-width: 1200px) {
   .contacts-list {
@@ -48,23 +60,27 @@
     font-size: 20px;
   }
   .contacts-pazzl-one {
+    display: block;
     position: absolute;
     top: -120px;
     left: 120px;
     z-index: -10;
   }
   .contacts-pazzl-two {
+    display: block;
     position: absolute;
     bottom: -60px;
     right: 100px;
   }
   .contacts-pazzl-three {
+    display: block;
     position: absolute;
     left: 120px;
     bottom: -150px;
     z-index: -10;
   }
   .contacts-pazzl-pazl-four {
+    display: block;
     position: absolute;
     right: 80px;
     bottom: 240px;
