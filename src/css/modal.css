@@ -5,7 +5,7 @@
   --pill-width: 320px;
 }
 
-.modal-menu {
+.js-modal-menu {
   position: fixed;
   inset: 0;
   margin: 0;
@@ -20,7 +20,7 @@
   z-index: 15000;
 }
 
-.mm-overlay {
+.js-mm-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
@@ -47,23 +47,23 @@
   transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s ease;
 }
 
-.modal-menu.is-open {
+.js-modal-menu.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: all;
 }
-.modal-menu.is-open .mm-overlay {
+.js-modal-menu.is-open .js-mm-overlay {
   opacity: 1;
   visibility: visible;
   pointer-events: all;
 }
-.modal-menu.is-open .mm-panel {
+.js-modal-menu.is-open .mm-panel {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
 }
 
-.mm-close {
+.js-mm-close {
   position: absolute;
   top: 12px;
   right: 16px;
@@ -93,7 +93,7 @@
   width: 100%;
 }
 
-.mm-link {
+.js-mm-link {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -103,7 +103,7 @@
   color: #1b1b1b;
   line-height: 1.2;
 }
-.mm-item + .mm-item .mm-link {
+.mm-item + .mm-item .js-mm-link {
   border-top: 1px solid #ffec95;
 }
 
@@ -116,8 +116,8 @@
   fill: none;
 }
 
-.mm-link:hover,
-.mm-link:focus-visible {
+.js-mm-link:hover,
+.js-mm-link:focus-visible {
   background: rgba(0, 0, 0, 0.03);
   border-radius: 8px;
   outline: none;
@@ -141,12 +141,12 @@ body.no-scroll {
   }
 }
 
-.modal-menu.is-open .mm-panel {
+.js-modal-menu.is-open .mm-panel {
   animation: bounceIn 0.4s ease;
 }
 
 @media (min-width: 1200px) {
-  .modal-menu {
+  .js-modal-menu {
     display: none;
   }
 }

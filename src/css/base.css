@@ -1,13 +1,6 @@
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: var(--header-bottom);
-}
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 :root {
+  --anchor-offset: 72px;
+
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -20,6 +13,31 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
+
+  --pill-width: 360px;
+  --pill-radius: 12px;
+  --pill-bg: #fff7c9;
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --anchor-offset: 96px;
+    --pill-width: 1200px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[id] {
+  scroll-margin-top: var(--anchor-offset);
 }
 
 body {
@@ -28,54 +46,179 @@ body {
   flex-direction: column;
   min-width: 100vw;
   min-height: 100vh;
-  font-family: 'Open Sans', sans-serif; /* Regular 400 */
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-style: normal;
   background: image-set(
       url('../img/backgraund/Background-mob.webp') 1x,
-      url('../img//backgraund/Background-cmob@2x.webp') 2x
+      url('../img/backgraund/Background-mob@2x.webp') 2x
     )
-    no-repeat center top;
-  background-size: cover;
-}
-main {
-  flex-grow: 1;
-}
-main:has(.back-link) {
-  text-align: center;
+    no-repeat center top / cover;
 }
 
-/* Заголовки */
-h1,
-h2,
-h3 {
-  font-family: 'Coiny', cursive; /* Coiny Regular */
-  font-weight: 400;
-}
-
-/* Підписи, цитати, слогани */
-.download-text,
-em,
-i {
-  font-family: 'Open Sans', sans-serif;
-  font-style: italic; /* Open Sans Italic */
-  font-weight: 400;
-}
-
-/* Напівжирний текст */
-strong,
-b {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600; /* SemiBold */
-}
-
-@media only screen and (min-width: 1200px) {
+@media (min-width: 1200px) {
   body {
     background: image-set(
         url('../img/backgraund/background-desktop.webp') 1x,
         url('../img/backgraund/background-desktop@2x.webp') 2x
       )
-      no-repeat center top;
-    background-size: cover;
+      no-repeat center top / cover;
+  }
+}
+
+main {
+  flex-grow: 1;
+
+  padding-top: var(--anchor-offset);
+}
+
+main:has(.back-link) {
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Coiny', cursive;
+  font-weight: 400;
+}
+
+.download-text,
+em,
+i {
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+strong,
+b {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+.header {
+  position: fixed;
+  left: 50%;
+  top: 8px;
+  transform: translateX(-50%);
+  z-index: 20000;
+  width: 100%;
+  pointer-events: none;
+}
+
+.header-container {
+  pointer-events: auto;
+  background: var(--pill-bg);
+  border-radius: var(--pill-radius);
+  box-shadow: 2px 2px 8px rgba(4, 9, 15, 0.24);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  min-width: 300px;
+  width: min(92vw, var(--pill-width));
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: block;
+}
+
+.game-title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav {
+  display: none;
+}
+
+.list-item {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.link-nav {
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.link-nav:hover,
+.link-nav:focus {
+  color: #6f6f70;
+}
+
+.burger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  padding: 0;
+}
+
+.burger-icon {
+  stroke: black;
+  width: 24px;
+  height: 24px;
+}
+
+.burger-icon .icon-burger {
+  display: inline;
+}
+.burger-icon .icon-close {
+  display: none;
+}
+.burger.is-open .icon-burger {
+  display: none;
+}
+.burger.is-open .icon-close {
+  display: inline;
+}
+
+@media (min-width: 1200px) {
+  .header {
+    top: 20px;
+    padding: 0 24px;
+  }
+
+  .header-container {
+    width: min(100%, var(--pill-width));
+    max-width: var(--pill-width);
+    padding: 20px 32px;
+  }
+
+  .nav {
+    display: flex;
+  }
+
+  .list-item {
+    display: flex;
+    gap: 36px;
+  }
+
+  .burger {
+    display: none;
+  }
+  .game-title {
+    display: none;
   }
 }
