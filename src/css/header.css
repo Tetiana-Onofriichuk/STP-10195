@@ -81,7 +81,7 @@
   }
   .header-container {
     display: flex;
-    justify-content: center;
+
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px 32px;
@@ -90,6 +90,8 @@
     width: auto;
   }
   .nav-container {
+    display: flex;
+    justify-content: center;
   }
 
   .nav {
@@ -98,7 +100,7 @@
   }
   .list-item {
     display: flex;
-    gap: 48px;
+    gap: 56px;
   }
   .link-nav {
     font-weight: 400;
