@@ -113,4 +113,7 @@ ol {
   .terms-list {
     font-size: 18px;
   }
+  .cookies-footer-container {
+    max-width: 1200px;
+  }
 }
