@@ -46,6 +46,8 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
+  width: 242px;
+  height: 60px;
 
   width: var(--card-w);
   margin: 0;
