@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const menu = document.querySelector('.js-modal-menu');
   const overlay = menu?.querySelector('.js-mm-overlay');
-  const openBtn = document.querySelector('.burger.js-mm-open'); // твоя кнопка-бургер
+  const openBtn = document.querySelector('.js-burger.js-mm-open');
   const closeBtn = menu?.querySelector('.js-mm-close');
   const links = menu?.querySelectorAll('.js-mm-link') || [];
 
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const openMenu = () => {
     menu.classList.add('is-open');
-    openBtn.classList.add('is-open'); // ← бургер міняється на хрестик
+    openBtn.classList.add('is-open');
     document.body.classList.add('no-scroll');
     openBtn.setAttribute('aria-expanded', 'true');
     overlay.setAttribute('aria-hidden', 'false');
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const closeMenu = () => {
     menu.classList.remove('is-open');
-    openBtn.classList.remove('is-open'); // ← повертаємо бургер
+    openBtn.classList.remove('is-open');
     document.body.classList.remove('no-scroll');
     openBtn.setAttribute('aria-expanded', 'false');
     overlay.setAttribute('aria-hidden', 'true');
