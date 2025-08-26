@@ -4,7 +4,6 @@
   --pill-width: 360px;
 }
 
-/* Mobile (без змін по суті) */
 .header {
   position: fixed;
   top: 8px;
@@ -48,7 +47,6 @@
 }
 
 .js-burger {
-  /* кнопка-бургер */
   background: none;
   border: 0;
   padding: 0;
@@ -72,20 +70,16 @@
   display: inline;
 }
 
-/* ======================= */
-/* Desktop — центр ідеально */
-/* ======================= */
 @media (min-width: 1200px) {
   .header {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    /* важливо: без горизонтальних паддінгів тут */
+
     padding: 0;
   }
 
   .header-container {
-    /* Замість flex — сітка 1fr auto 1fr */
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
@@ -95,20 +89,17 @@
     min-width: 1032px;
     margin: 0 auto;
 
-    /* рівні внутрішні відступи без перекосу */
     padding: 20px 32px;
   }
 
-  /* Лого — зліва, без додаткового margin-right */
   .logo {
     justify-self: start;
     margin-right: 0;
   }
 
-  /* Меню — геометрично по центру */
   .nav-container {
     justify-self: center;
-    width: max-content; /* щоб центр був по ширині меню */
+    width: max-content;
   }
   .nav {
     display: block;
@@ -134,7 +125,6 @@
     color: #6f6f70;
   }
 
-  /* Права колонка: бургер ховаємо, заголовок ховаємо */
   .js-burger {
     display: none;
   }
