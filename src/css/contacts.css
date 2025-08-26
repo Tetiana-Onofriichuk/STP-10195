@@ -12,7 +12,9 @@
   color: #04090f;
   margin-bottom: 12px;
 }
-
+.contacts-list{
+  padding-left: 10px;
+}
 .contacts-list-item {
   font-weight: 600;
   font-size: 14px;
