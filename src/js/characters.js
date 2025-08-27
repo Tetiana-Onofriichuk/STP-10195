@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     (entries, obs) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
-          e.target.classList.add('in-view');
+          e.target.classList.add('js-in-view');
           obs.unobserve(e.target);
         }
       });
