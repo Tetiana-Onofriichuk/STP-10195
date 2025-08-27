@@ -63,9 +63,6 @@
   }
 }
 
-/* ===== Reveal animation (fixed selectors) ===== */
-
-/* стартовий стан перед появою */
 .js-characters-card.reveal {
   opacity: 0;
   transform: translateX(var(--shift, 0));
@@ -73,14 +70,12 @@
   transition: transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1), opacity 600ms ease;
 }
 
-/* фінальний стан */
-.js-characters-card.reveal.in-view {
+.js-characters-card.reveal.js-in-view {
   opacity: 1;
   transform: translateX(0);
   transition-delay: var(--delay, 0ms);
 }
 
-/* напрямок в’їзду */
 .js-characters-card.reveal.from-left {
   --shift: -40px;
 }
@@ -88,7 +83,6 @@
   --shift: 40px;
 }
 
-/* каскадні затримки */
 .js-characters-card.reveal:nth-child(1) {
   --delay: 0ms;
 }
@@ -102,7 +96,6 @@
   --delay: 240ms;
 }
 
-/* доступність */
 @media (prefers-reduced-motion: reduce) {
   .js-characters-card.reveal {
     opacity: 1;
