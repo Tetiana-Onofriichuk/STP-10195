@@ -1,10 +1,10 @@
 .faq-title {
-font-family: "Coiny", sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    text-align: center;
-    color: #04090f;
-    margin-bottom: 12px;
+  font-family: 'Coiny', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  color: #04090f;
+  margin-bottom: 12px;
 }
 
 .js-box {
@@ -47,9 +47,11 @@ background-color:#a5e5f2;
   background-color: #fff5c9;
   white-space: normal;
 }
+
 .js-box.fifth:active{
 background-color: #faefc0;
 }
+
 
 .js-trigger {
   position: relative;
@@ -69,16 +71,16 @@ background-color: #faefc0;
   font-size: 20px;
 }
 
-.js-box.active .js-trigger::after {
+.js-box.js-active .js-trigger::after {
   content: '\2715';
 }
 
 .js-content {
   display: none;
-transition: 0.3s ease;
+  transition: 0.3s ease;
   font-size: 12px;
 }
-.js-content.open {
+.js-content.js-open {
   display: block;
 }
 
@@ -87,23 +89,22 @@ transition: 0.3s ease;
   padding-top: 0;
 }
 
-
 @media only screen and (min-width: 1200px) {
- .faq-title{
-font-size: 36px;
- }   
+  .faq-title {
+    font-size: 36px;
+  }
 
- .js-trigger{
-        font-size: 20px;
-        line-height: 1.5;
-        letter-spacing: -0.02em;
- }
- .js-text{
+  .js-trigger {
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+  }
+  .js-text {
     font-size: 18px;
- }
+  }
 
- .js-trigger::after{
+  .js-trigger::after {
     right: 16px;
-        font-size: 28px;
- }
+    font-size: 28px;
+  }
 }

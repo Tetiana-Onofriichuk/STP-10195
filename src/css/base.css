@@ -28,8 +28,8 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: clip; /* або hidden */
-  overflow-y: auto; /* дозволяємо вертикальний скрол */
+  overflow-x: clip;
+  overflow-y: auto;
 }
 
 *,
