@@ -5,7 +5,7 @@ import 'swiper/css/pagination';
 import Swiper from 'swiper';
 import { Navigation, Keyboard, Pagination } from 'swiper/modules';
 
-const swiper = new Swiper('.gallery-swiper', {
+const swiper = new Swiper('.js-gallery-swiper', {
   loop: false,
   speed: 600,
   grabCursor: true,
@@ -23,7 +23,7 @@ const swiper = new Swiper('.gallery-swiper', {
     pageUpDown: true,
   },
   pagination: {
-    el: '.gallery-pagination',
+    el: '.js-gallery-pagination',
     clickable: true,
   },
 
@@ -37,19 +37,18 @@ const swiper = new Swiper('.gallery-swiper', {
   },
 });
 
-// функція для вмикання/вимикання стрілок
 function updateNavButtons(swiperIns) {
   const prevBut = document.querySelector('.swiper-btn-prev');
   const nextBut = document.querySelector('.swiper-btn-next');
   if (swiperIns.isBeginning) {
-    prevBut.classList.add('button-dis');
+    prevBut.classList.add('js-button-dis');
   } else {
-    prevBut.classList.remove('button-dis');
+    prevBut.classList.remove('js-button-dis');
   }
 
   if (swiperIns.isEnd) {
-    nextBut.classList.add('button-dis');
+    nextBut.classList.add('js-button-dis');
   } else {
-    nextBut.classList.remove('button-dis');
+    nextBut.classList.remove('js-button-dis');
   }
 }
