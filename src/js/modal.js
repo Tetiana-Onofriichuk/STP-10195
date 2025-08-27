@@ -1,26 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
   const burger = document.querySelector('.js-mm-open');
-  const modal = document.querySelector('.modal-menu');
-  const overlay = modal?.querySelector('.mm-overlay');
-  const closeBtn = modal?.querySelector('.mm-close');
-  const links = modal?.querySelectorAll('.mm-link') || [];
+  const modal = document.querySelector('.js-modal-menu');
+  const overlay = modal?.querySelector('.js-mm-overlay');
+  const closeBtn = modal?.querySelector('.js-mm-close');
+  const links = modal?.querySelectorAll('.js-mm-link') || [];
 
   const openMenu = () => {
-    modal.classList.add('is-open');
-    burger.classList.add('is-open');
+    modal.classList.add('js-is-open');
+    burger.classList.add('js-is-open');
     burger.setAttribute('aria-expanded', 'true');
-    document.body.classList.add('no-scroll');
+    document.body.classList.add('js-no-scroll');
   };
 
   const closeMenu = () => {
-    modal.classList.remove('is-open');
-    burger.classList.remove('is-open');
+    modal.classList.remove('js-is-open');
+    burger.classList.remove('js-is-open');
     burger.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('no-scroll');
   };
 
   burger.addEventListener('click', () => {
-    modal.classList.contains('is-open') ? closeMenu() : openMenu();
+    modal.classList.contains('js-is-open') ? closeMenu() : openMenu();
   });
 
   closeBtn?.addEventListener('click', closeMenu);
