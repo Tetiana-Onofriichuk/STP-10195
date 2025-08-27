@@ -11,7 +11,7 @@
   margin-bottom: 12px;
 }
 
-.gallery-slide {
+.js-gallery-slide {
   display: flex;
   justify-content: center;
 }
@@ -28,7 +28,7 @@
   display: none;
 }
 
-.gallery-pagination {
+.js-gallery-pagination {
   padding-top: 12px;
   display: flex;
   justify-content: center;
@@ -71,10 +71,10 @@
     gap: 32px;
     margin-top: 18px;
   }
-  .gallery-pagination {
+  .js-gallery-pagination {
     display: none;
   }
-  .button-dis {
+  .js-button-dis {
     opacity: 0.5;
     pointer-events: none;
     cursor: default;
