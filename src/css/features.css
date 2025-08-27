@@ -119,11 +119,11 @@
   fill: none;
 }
 
-.js-features-items.in-view {
+.js-features-items.js-in-view {
   opacity: 1;
   transform: translateX(0);
 }
-.js-features-items.in-view .features-item-image-wrapper {
+.js-features-items.js-in-view .features-item-image-wrapper {
   transform: scale(1);
 }
 
