@@ -13,29 +13,45 @@
   border-radius: 12px;
   box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.2);
 }
+.js-box:hover {
+  box-shadow: 4px 6px 9px 0 rgba(0, 0, 0, 0.24);
+}
 
 .js-box.first {
   background-color: #ffc9e6;
 }
 
-/* .js-box.first:hover{
-  background-color: lightpink;
-} */
+.js-box.first:active{
+  background-color: #fac0df;
+}
 .js-box.second {
   background-color: #deffc9;
 }
-
+.js-box.second:active {
+  background-color:#d6fac0;
+}
 .js-box.third {
   background-color: #ffdbc9;
+}
+.js-box.third:active {
+  background-color: #fad4c0;
 }
 
 .js-box.fourth {
   background-color: #aceaf7;
 }
+.js-box.fourth:active{
+background-color:#a5e5f2;
+}
 .js-box.fifth {
   background-color: #fff5c9;
   white-space: normal;
 }
+
+.js-box.fifth:active{
+background-color: #faefc0;
+}
+
 
 .js-trigger {
   position: relative;
