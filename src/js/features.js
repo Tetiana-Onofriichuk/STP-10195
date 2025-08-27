@@ -6,7 +6,7 @@ const io = new IntersectionObserver(
   entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        e.target.classList.add('in-view');
+        e.target.classList.add('js-in-view');
         io.unobserve(e.target);
       }
     });
