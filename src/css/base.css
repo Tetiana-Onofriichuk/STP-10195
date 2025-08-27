@@ -28,7 +28,8 @@
 
 html {
   scroll-behavior: smooth;
-  overflow: hidden;
+  overflow-x: clip; /* або hidden */
+  overflow-y: auto; /* дозволяємо вертикальний скрол */
 }
 
 *,
@@ -56,6 +57,7 @@ body {
     )
     no-repeat center top / cover;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 @media (min-width: 1200px) {
