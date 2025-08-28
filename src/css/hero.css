@@ -205,7 +205,7 @@
   will-change: opacity, transform, filter;
 }
 
-.js-hero-picture .js-hero-img.js-is-visible {
+.js-hero-picture .js-hero-img.js-visible {
   opacity: 1;
   transform: none;
   filter: blur(0);
