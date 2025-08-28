@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const img = document.querySelector('.hero-picture .hero-img');
   if (!img) return;
 
-  const reveal = () => img.classList.add('is-visible');
+  const reveal = () => img.classList.add('js-visible');
 
   if (img.complete) {
     img.decode ? img.decode().then(reveal).catch(reveal) : reveal();
