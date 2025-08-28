@@ -2,9 +2,9 @@ const scrollBtn = document.getElementById('js-scrollup');
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > 300) {
-    scrollBtn.classList.add('show');
+    scrollBtn.classList.add('js-show');
   } else {
-    scrollBtn.classList.remove('show');
+    scrollBtn.classList.remove('js-show');
   }
 });
 
