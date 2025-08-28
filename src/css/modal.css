@@ -47,17 +47,17 @@
   transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s ease;
 }
 
-.js-modal-menu.is-open {
+.js-modal-menu.js-is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: all;
 }
-.js-modal-menu.is-open .js-mm-overlay {
+.js-modal-menu.js-is-open .js-mm-overlay {
   opacity: 1;
   visibility: visible;
   pointer-events: all;
 }
-.js-modal-menu.is-open .mm-panel {
+.js-modal-menu.js-is-open .mm-panel {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
@@ -123,7 +123,7 @@
   outline: none;
 }
 
-body.no-scroll {
+body.js-no-scroll {
   overflow: hidden;
 }
 
@@ -141,7 +141,7 @@ body.no-scroll {
   }
 }
 
-.js-modal-menu.is-open .mm-panel {
+.js-modal-menu.js-is-open .mm-panel {
   animation: bounceIn 0.4s ease;
 }
 

@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const cards = [...document.querySelectorAll('.js-characters-card.js-reveal')];
 
   cards.forEach((card, i) => {
-    card.classList.add(i % 2 === 0 ? 'from-left' : 'from-right');
+    card.classList.add(i % 2 === 0 ? 'js-from-left' : 'js-from-right');
   });
 
   const io = new IntersectionObserver(

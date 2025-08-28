@@ -63,46 +63,46 @@
   }
 }
 
-.js-characters-card.reveal {
+.js-characters-card.js-reveal {
   opacity: 0;
   transform: translateX(var(--shift, 0));
   will-change: transform, opacity;
   transition: transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1), opacity 600ms ease;
 }
 
-.js-characters-card.reveal.js-in-view {
+.js-characters-card.js-reveal.js-in-view {
   opacity: 1;
   transform: translateX(0);
   transition-delay: var(--delay, 0ms);
 }
 
-.js-characters-card.reveal.from-left {
+.js-characters-card.js-reveal.js-from-left {
   --shift: -40px;
 }
-.js-characters-card.reveal.from-right {
+.js-characters-card.js-reveal.js-from-right {
   --shift: 40px;
 }
 
-.js-characters-card.reveal:nth-child(1) {
+.js-characters-card.js-reveal:nth-child(1) {
   --delay: 0ms;
 }
-.js-characters-card.reveal:nth-child(2) {
+.js-characters-card.js-reveal:nth-child(2) {
   --delay: 80ms;
 }
-.js-characters-card.reveal:nth-child(3) {
+.js-characters-card.js-reveal:nth-child(3) {
   --delay: 160ms;
 }
-.js-characters-card.reveal:nth-child(4) {
+.js-characters-card.js-reveal:nth-child(4) {
   --delay: 240ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .js-characters-card.reveal {
+  .js-characters-card.js-reveal {
     opacity: 1;
     transform: none;
     transition: none;
   }
-  .js-characters-card.reveal.in-view {
+  .js-characters-card.js-reveal.js-in-view {
     transition: none;
   }
 }

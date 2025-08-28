@@ -8,23 +8,23 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!menu || !overlay || !openBtn || !closeBtn) return;
 
   const openMenu = () => {
-    menu.classList.add('is-open');
-    openBtn.classList.add('is-open');
-    document.body.classList.add('no-scroll');
+    menu.classList.add('js-is-open');
+    openBtn.classList.add('js-is-open');
+    document.body.classList.add('js-no-scroll');
     openBtn.setAttribute('aria-expanded', 'true');
     overlay.setAttribute('aria-hidden', 'false');
   };
 
   const closeMenu = () => {
-    menu.classList.remove('is-open');
-    openBtn.classList.remove('is-open');
-    document.body.classList.remove('no-scroll');
+    menu.classList.remove('js-is-open');
+    openBtn.classList.remove('js-is-open');
+    document.body.classList.remove('js-no-scroll');
     openBtn.setAttribute('aria-expanded', 'false');
     overlay.setAttribute('aria-hidden', 'true');
   };
 
   openBtn.addEventListener('click', () => {
-    if (menu.classList.contains('is-open')) {
+    if (menu.classList.contains('js-is-open')) {
       closeMenu();
     } else {
       openMenu();
